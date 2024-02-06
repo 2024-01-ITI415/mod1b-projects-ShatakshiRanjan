@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 792234106}
   - component: {fileID: 792234109}
   - component: {fileID: 792234110}
+  - component: {fileID: 792234111}
   m_Layer: 0
   m_Name: _MainCamera
   m_TagString: MainCamera
@@ -378,6 +379,32 @@ MonoBehaviour:
   cloudScaleMin: 0.5
   cloudScaleMax: 1.5
   cloudSpeedMult: 0.5
+--- !u!114 &792234111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792234105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ac27df56366214b871c18cc4656759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitLevel: {fileID: 2043025408}
+  unitShots: {fileID: 2030141945}
+  unitButton: {fileID: 2121732270}
+  castlePos: {x: 50, y: -9.5, z: 0}
+  castles:
+  - {fileID: 8956383291410126339, guid: fd8619be11e449b4e90578977051da7f, type: 3}
+  - {fileID: 8956383291410126339, guid: 699eb4982d0d20c45ab4e87af3d6a519, type: 3}
+  - {fileID: 8956383291410126339, guid: 809abe2ce6f61bb48b6ea57ed6978ee1, type: 3}
+  level: 0
+  levelMax: 0
+  shotsTaken: 0
+  castle: {fileID: 0}
+  mode: 0
+  showing: Show Slingshot
 --- !u!1 &1129969955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,7 +1132,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2017270471}
-  - component: {fileID: 2017270470}
   m_Layer: 0
   m_Name: ViewBoth
   m_TagString: Untagged
@@ -1113,29 +1139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2017270470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017270469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19ac27df56366214b871c18cc4656759, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitLevel: {fileID: 2043025408}
-  unitShots: {fileID: 2030141945}
-  unitButton: {fileID: 0}
-  castlePos: {x: 0, y: 0, z: 0}
-  castles: []
-  level: 0
-  levelMax: 0
-  shotsTaken: 0
-  castle: {fileID: 0}
-  mode: 0
-  showing: Show Slingshot
 --- !u!4 &2017270471
 Transform:
   m_ObjectHideFlags: 0
@@ -1393,12 +1396,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 792234105}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1577,10 +1580,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_FontSize: 16
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0

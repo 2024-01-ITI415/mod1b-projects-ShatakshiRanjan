@@ -61,7 +61,7 @@ public class MissionDemolition : MonoBehaviour
 
     void UpdateGUI()
     {
-        unitLevel.text = "Level: " + (level + 1) + "of" + levelMax;
+        unitLevel.text = "Level: " + (level + 1) + " of " + levelMax;
         unitShots.text = "Shots Taken: " + shotsTaken;
     }
 
@@ -71,7 +71,7 @@ public class MissionDemolition : MonoBehaviour
         if((mode == GameMode.playing) && Goal.goalMet)
         {
             mode = GameMode.levelEnd;
-            SwitchView("ShowBoth");
+            SwitchView("Show Both");
             Invoke("NextLevel", 2f);
         }
     }
@@ -101,12 +101,12 @@ public class MissionDemolition : MonoBehaviour
                 break;
 
             case "Show Castle":
-                FollowCam.POI = null;
+                FollowCam.POI = S.castle;
                 unitButton.text = "Show Both";
                 break;
 
             case "Show Both":
-                FollowCam.POI = null;
+                FollowCam.POI = GameObject.Find("ViewBoth");
                 unitButton.text = "Show Slingshot";
                 break;
         }
