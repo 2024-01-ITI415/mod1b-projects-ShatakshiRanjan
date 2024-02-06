@@ -51,7 +51,7 @@ public class Slingshot : MonoBehaviour
         projectileRigidbody.isKinematic = true;
     }
 
-    private void Update()
+    void Update()
     {
         if (!aimingMode) return;
         Vector3 mousePos2D = Input.mousePosition;
@@ -75,6 +75,8 @@ public class Slingshot : MonoBehaviour
             projectileRigidbody.velocity = -mouseDelta * velocityMult;
             FollowCam.POI = projectile;
             projectile = null;
+            MissionDemolition.ShotFired();
+            ProjectLine.S.poi = projectile;
         }
     }
 }
