@@ -11,14 +11,8 @@ public class MainCamera : MonoBehaviour
     {
         if (targetObject != null)
         {
-            // Calculate the direction from the camera to the target object
-            Vector3 direction = targetObject.position - transform.position;
-
-            // Normalize the direction to have a magnitude of 1
-            direction.Normalize();
-
-            // Move the camera towards the target object
-            transform.Translate(direction * speed * Time.deltaTime);
+            // Move the camera directly towards the target object
+            transform.position = Vector3.MoveTowards(transform.position, targetObject.position, speed * Time.deltaTime);
         }
     }
 }

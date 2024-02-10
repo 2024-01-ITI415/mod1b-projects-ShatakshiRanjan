@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
         direction = newDirection;
     }
 
-    void OnCollisionEnter(Collision collision)
+    /*void OnCollisionEnter(Collision collision)
     {
         // Check if the projectile collides with the ground object
         if (collision.gameObject.CompareTag("Ground"))
@@ -33,5 +33,5 @@ public class Projectile : MonoBehaviour
             // Destroy the projectile
             Destroy(gameObject);
         }
-    }
+    }*/
 }
