@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class Projectile : MonoBehaviour
 {
@@ -9,7 +12,7 @@ public class Projectile : MonoBehaviour
 
     private Vector3 direction;
 
-    void Update()
+    private void Update()
     {
         // Move the projectile in its direction
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
@@ -25,13 +28,16 @@ public class Projectile : MonoBehaviour
         direction = newDirection;
     }
 
-    /*void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        // Check if the projectile collides with the ground object
-        if (collision.gameObject.CompareTag("Ground"))
+        // Check if the projectile collides with a target
+        if (other.CompareTag("Target"))
         {
-            // Destroy the projectile
-            Destroy(gameObject);
+            // Destroy the target object
+            Destroy(other.gameObject);
+
+            // Update the score using ScoreManager
+            FindObjectOfType<ScoreManager>().IncrementScore(100);
         }
-    }*/
+    }
 }
