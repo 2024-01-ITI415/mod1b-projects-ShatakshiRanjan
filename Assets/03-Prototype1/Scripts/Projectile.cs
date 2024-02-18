@@ -40,4 +40,14 @@ public class Projectile : MonoBehaviour
             FindObjectOfType<ScoreManager>().IncrementScore(100);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Check if the collision is with an object tagged as "Ground"
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            // Destroy the projectile
+            Destroy(gameObject);
+        }
+    }
 }
