@@ -1,9 +1,9 @@
 const cacheName = "Shatakshi Ranjan-multiScenedemo-0.2";
 const contentToCache = [
-    "Build/Web.loader.js",
-    "Build/Web.framework.js",
-    "Build/Web.data",
-    "Build/Web.wasm",
+    "Build/WebBuild.loader.js",
+    "Build/WebBuild.framework.js",
+    "Build/WebBuild.data",
+    "Build/WebBuild.wasm",
     "TemplateData/style.css"
 
 ];
